@@ -1,7 +1,7 @@
 <template> 
-    <ul>
-        <li v-for="route in allPages" :key="route.path">
-        <NuxtLink :to="route.path">{{ route.name || route.path }}</NuxtLink>
+    <ul class="flex flex-col">
+        <li v-for="route in allPages" :key="route.path" class="text-right">
+            <NuxtLink :to="route.path">{{ route.name || route.path }}</NuxtLink>
         </li>
     </ul>
 

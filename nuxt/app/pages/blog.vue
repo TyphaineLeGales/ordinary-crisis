@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>BLOG</h1>
+    <h1 class="font-extrabold uppercase">Blog</h1>
     <p v-if="error">Couldn't load posts.</p>
     <p v-else-if="!posts?.length">No posts published yet.</p>
     <ul v-else>

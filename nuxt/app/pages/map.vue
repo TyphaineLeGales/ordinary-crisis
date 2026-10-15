@@ -1,3 +1,3 @@
 <template>
-    <h1>La carte</h1>
+    <h1 class="font-extrabold uppercase">Map</h1>
 </template>

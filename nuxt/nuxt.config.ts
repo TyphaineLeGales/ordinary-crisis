@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/sanity'],
+  modules: ['@nuxtjs/sanity', '@nuxtjs/tailwindcss'],
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     sanity: {
@@ -17,10 +17,6 @@ export default defineNuxtConfig({
     dataset: process.env.NUXT_SANITY_DATASET || 'production',
     apiVersion: '2026-10-15',
   },
-  vite: {
-    plugins: [
-      tailwindcss(),
-    ],
-  },
+  
   
 })
