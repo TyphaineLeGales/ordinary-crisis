@@ -27,3 +27,9 @@
 
 # Dotenv and similar local-only files
 *.local
+
+.sanity-token
+.env
+.env.*
+!.env.example
+*.local
