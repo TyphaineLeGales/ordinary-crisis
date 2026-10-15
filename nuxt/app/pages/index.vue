@@ -7,14 +7,14 @@
       <li v-for="post in posts" :key="post._id">
         <h2>{{ post.title }}</h2>
         <p>{{ new Date(post.publishedAt).toLocaleDateString() }}</p>
-        <NuxtLink :to="`/posts/${post.slug.current}`">
-          Read article
-        </NuxtLink>
+        <PortableText :value="post.body" />
+        
       </li>
     </ul>
   </main>
 </template>
 <script setup>
+import { PortableText } from '@portabletext/vue';
 const postsQuery = groq`*[
   _type == "post" &&
   defined(slug.current)
@@ -22,7 +22,8 @@ const postsQuery = groq`*[
   _id,
   title,
   slug,
-  publishedAt
+  publishedAt,
+  body
 }`
 
 const { data: posts, error } = await useSanityQuery(postsQuery)
