@@ -3,8 +3,9 @@ export default defineEventHandler(async () => {
 
   const query = `*[
     _type == "post" &&
-    defined(slug.current)
-  ] | order(publishedAt desc) {
+    defined(slug.current) &&
+    !(_id in path("drafts.**"))
+    ] | order(publishedAt desc) {
     _id,
     title,
     slug,
