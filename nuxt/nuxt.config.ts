@@ -3,7 +3,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/sanity', '@nuxtjs/tailwindcss', '@nuxt/image'],
+  modules: ['@nuxtjs/sanity', '@nuxtjs/tailwindcss', '@nuxt/image',  ['nuxt-mapbox', {
+      persistent: false,
+    }],],
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     sanity: {
@@ -22,6 +24,9 @@ export default defineNuxtConfig({
       projectId: process.env.NUXT_SANITY_PROJECT_ID || '',
       dataset: process.env.NUXT_SANITY_DATASET || 'production'
     }
+  },
+  mapbox: {
+    accessToken:process.env.NUXT_MAPBOX_TOKEN
   },
   
   

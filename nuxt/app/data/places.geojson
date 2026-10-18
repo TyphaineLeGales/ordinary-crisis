@@ -1,0 +1,86 @@
+
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Houston" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-95.3698, 29.7604]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Austin" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-97.7431, 30.2672]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Marfa" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-104.0255, 30.3107]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Pecos" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-103.4932, 31.4229]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Midland" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-102.0779, 31.9973]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Odessa" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-102.3676, 31.8457]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Anarene" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-98.0, 33.5]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Corpus Christi" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-97.3964, 27.8006]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Port Arthur" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-93.9340, 29.8988]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Beaumont" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-94.1266, 30.0802]
+      }
+    }
+  ]
+}
