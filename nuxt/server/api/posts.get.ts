@@ -8,6 +8,7 @@ export default defineEventHandler(async () => {
     ] | order(publishedAt desc) {
     _id,
     title,
+    image,
     slug,
     publishedAt,
     body
