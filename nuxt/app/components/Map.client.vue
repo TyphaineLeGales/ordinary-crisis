@@ -1,8 +1,7 @@
 <template>
-
     <div ref="mapContainer" class="absolute inset-0 w-full h-full"></div>
-
 </template>
+
 <script setup lang="ts">
 import * as maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
@@ -95,16 +94,12 @@ onMounted(async () => {
         zoom: isMobile ? 3.5 : 4.6,
         minZoom: 2.5,
         maxZoom: 9,
-
-       maxBounds: isMobile
-        ? [[-115, 15],[-80, 43],]
-        : [[-132, 22],[-62, 52],],
+        maxBounds: isMobile
+            ? [[-115, 15],[-80, 43],]
+            : [[-132, 22],[-62, 52],],
     })
 
-    map.addControl(
-        new maplibregl.NavigationControl(),
-        'top-right',
-    )
+    map.addControl(new maplibregl.NavigationControl(),'top-right')
 
     map.on('load', () => {
         if (!map) return
@@ -143,6 +138,7 @@ onMounted(async () => {
         source: 'texas-places',
         paint: {
             "circle-radius": 6,
+            "circle-color": "#ffffff",
             "circle-stroke-color": '#C085FC',
         }} as maplibregl.CircleLayerSpecification)
 
