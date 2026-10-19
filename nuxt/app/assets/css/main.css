@@ -10,3 +10,8 @@
 body {
     min-height:100vh;
 }
+
+a {
+    font-style: underline;
+    color: oklch(49.6% 0.265 301.924);
+}

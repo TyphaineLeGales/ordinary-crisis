@@ -87,8 +87,8 @@ onMounted(async () => {
         maxZoom: 9,
 
        maxBounds: isMobile
-        ? [[-115, 20],[-80, 43],]
-        : [[-132, 22],[-45, 52],],
+        ? [[-115, 15],[-80, 43],]
+        : [[-132, 22],[-62, 52],],
     })
 
     map.addControl(
@@ -172,3 +172,8 @@ onBeforeUnmount(() => {
   map = undefined
 })
 </script>
+<style>
+.maplibregl-ctrl-bottom-right {
+    display: none;
+}
+</style>
