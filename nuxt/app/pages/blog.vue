@@ -25,5 +25,4 @@
 <script setup>
 import { PortableText } from '@portabletext/vue';
 const { data: posts, error, status } = await useFetch('/api/posts')
-console.log(posts)
 </script>

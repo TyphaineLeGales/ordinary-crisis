@@ -1,17 +1,27 @@
 <template>
     <Transition name="popup">
-        <div class="flex justify-center bg-black-full bg-opacity-50 w-[350px] min-h-[300px] pointer-events-auto m-6 backdrop-blur-sm p-3" v-show="locationActive">
-            <h3 class="text-white-full uppercase text-lg">{{ locationActive?.name }}</h3>
-            <!-- <p> {{ description }}</p> -->
+        <div class="flex items-center bg-black-full bg-opacity-50 w-[350px] min-h-[300px] pointer-events-auto m-6 backdrop-blur-sm p-3 flex-col" v-show="locationActive">
+            <h3 class="text-white-full font-medium uppercase text-lg pb-3">{{ locationActive?.name }}</h3>
+            <p class="text-white-full"> {{ locationActive?.description }}</p>
         </div>
     </Transition>
 </template>
 <script setup>
 const locationActive = ref(null)
+import { PortableText } from '@portabletext/vue';
+const { data: locations, error, status } = await useFetch('/api/locations')
+console.log(locations)
+watchEffect(() => {
+  console.log('Status:', status.value)
+  console.log('Locations:', locations.value)
+  console.log('Error:', error.value)
+})
 const { $listen, $kill } = useNuxtApp()
 
 const onLocationSet = (location) => {
-  locationActive.value = location
+  const newVal = locations.value.filter(l => l.name === location.name)[0] || location
+  locationActive.value = newVal
+
 }
 
 onMounted(() => {
