@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen flex flex-col">
-    <header class="bg-slate-900 z-10">
+    <header class="bg-black-full z-10">
         <NuxtLink to="/">
           <h1 class="font-semibold text-3xl uppercase text-purple-400 border-b-2 border-purple-400 w-full p-3">
             Ordinary Crisis
@@ -11,7 +11,10 @@
          <nav class="md:w-20 md:shrink-0 md:order-last md:flex md:justify-end z-10">
            <Nav />
          </nav>
-      <section class="flex-1 p-6 ">
+      <section class="flex-1">
+        <ClientOnly>
+          <Texasmap />
+        </ClientOnly>
         <slot />
       </section>
 

@@ -1,5 +1,5 @@
 <template>
-    <h1 class="font-extrabold uppercase">WHAT ? </h1>
+    <h2 class="font-extrabold uppercase">WHAT ? </h2>
     <p>
         Ce projet est né de la rencontre entre Camille El Bacha, musicien, et Jean Daniélou, sociologue. Nous cherchions tous deux à dépasser les limites de nos disciplines respectives afin de mieux saisir la nature sensible de la crise climatique.
 
