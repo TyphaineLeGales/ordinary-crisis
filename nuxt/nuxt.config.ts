@@ -43,9 +43,9 @@ export default defineNuxtConfig({
   },
     ssr: {
       noExternal: [
-    'maplibre-gl',
-    '@indoorequal/vue-maplibre-gl',
-  ],
+        'maplibre-gl',
+        '@indoorequal/vue-maplibre-gl',
+      ],
     },
   },
 })

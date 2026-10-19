@@ -9,6 +9,7 @@ import * as maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import useMap from '~/composable/useMap'
 
+const { $event } = useNuxtApp()
 const mapContainer = ref<HTMLElement | null>(null)
 const { places, placesLayer, labelsLayer } = useMap()
 
@@ -22,7 +23,7 @@ const layerIds = [
   'texas-city-labels'
 ]
 
-function updateMapInfoVisibility() {
+const updateMapInfoVisibility = () => {
   if (!map) return
 
   const visible = route.path === '/map'
@@ -43,6 +44,15 @@ watch(
   updateMapInfoVisibility,
   { immediate: true }
 )
+
+const emitResetLoc = (event, map) => {
+    const features = map.queryRenderedFeatures(event.point, {
+        layers: ['texas-city-points'],
+    })
+    if (features.length > 0) return
+    $event('location:clear')
+
+}
 
 
 onMounted(async () => {
@@ -109,7 +119,7 @@ onMounted(async () => {
         type: 'line',
         source: 'texas-outline',
         paint: {
-            'line-color': '#C085FC',
+            'line-color': '#9334EA',
             'line-width': 2,
         },
         })
@@ -131,7 +141,10 @@ onMounted(async () => {
         map.addLayer({
         ...placesLayer,
         source: 'texas-places',
-        } as maplibregl.CircleLayerSpecification)
+        paint: {
+            "circle-radius": 6,
+            "circle-stroke-color": '#C085FC',
+        }} as maplibregl.CircleLayerSpecification)
 
         map.addLayer({
         ...labelsLayer,
@@ -139,13 +152,19 @@ onMounted(async () => {
         } as maplibregl.SymbolLayerSpecification)
 
         updateMapInfoVisibility()
+        map.on('click', (event) => {
+            emitResetLoc(event, map)
+            $event('location:clear')
+        })
+        map.on('drag', (event) => {
+            emitResetLoc(event, map)
+            $event('location:clear')
+        })
 
-        map.on('click', 'texas-city-points', (event) => {
+        map.on('click', 'texas-city-points', (event:maplibregl.Event) => {
             const feature = event.features?.[0]
-            if (!feature || feature.geometry.type !== 'Point') {
-                return
-            }
-            // TODO - pick up ID or use feature.properties?.name to fetch data from backend
+            if (!feature || feature.geometry.type !== 'Point') return
+            $event('location:set', event.features?.[0].properties)
         })
 
         map.on('mouseenter', 'texas-city-points', () => {
@@ -159,6 +178,11 @@ onMounted(async () => {
             map.getCanvas().style.cursor = ''
         }
         })
+
+        map.addControl(
+            new maplibregl.NavigationControl(),
+            'bottom-left'
+        )
     })
 
     map.on('error', (event) => {
@@ -174,6 +198,9 @@ onBeforeUnmount(() => {
 </script>
 <style>
 .maplibregl-ctrl-bottom-right {
+    display: none;
+}
+.maplibregl-ctrl-top-right {
     display: none;
 }
 </style>
