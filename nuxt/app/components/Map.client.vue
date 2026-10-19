@@ -1,7 +1,7 @@
 <template>
   <div
     ref="mapContainer"
-    class="w-full h-[calc(100vh-100px)] md:h-full relative"
+    class="absolute inset-0 w-full h-full"
   />
 </template>
 <script setup lang="ts">
@@ -88,7 +88,7 @@ onMounted(async () => {
 
        maxBounds: isMobile
         ? [[-115, 20],[-80, 43],]
-        : [[-132, 22],[-62, 52],],
+        : [[-132, 22],[-45, 52],],
     })
 
     map.addControl(
@@ -111,6 +111,15 @@ onMounted(async () => {
         paint: {
             'line-color': '#C085FC',
             'line-width': 2,
+        },
+        })
+        map.addLayer({
+        id: 'texas-fill',
+        type: 'fill',
+        source: 'texas-outline',
+        paint: {
+            'fill-color': '#C085FC',
+            'fill-opacity': 0.3,
         },
         })
 
