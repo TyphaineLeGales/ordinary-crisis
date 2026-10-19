@@ -1,8 +1,7 @@
 <template>
-  <div
-    ref="mapContainer"
-    class="absolute inset-0 w-full h-full"
-  />
+
+    <div ref="mapContainer" class="absolute inset-0 w-full h-full"></div>
+
 </template>
 <script setup lang="ts">
 import * as maplibregl from 'maplibre-gl'
@@ -12,6 +11,7 @@ import useMap from '~/composable/useMap'
 const { $event } = useNuxtApp()
 const mapContainer = ref<HTMLElement | null>(null)
 const { places, placesLayer, labelsLayer } = useMap()
+const isMapLoaded = useState('map-loaded', () => false)
 
 let map: maplibregl.Map | undefined
 const isMobile = window.matchMedia('(max-width: 767px)').matches
@@ -151,6 +151,8 @@ onMounted(async () => {
         source: 'texas-places',
         } as maplibregl.SymbolLayerSpecification)
 
+  
+
         updateMapInfoVisibility()
         map.on('click', (event) => {
             emitResetLoc(event, map)
@@ -183,6 +185,10 @@ onMounted(async () => {
             new maplibregl.NavigationControl(),
             'bottom-left'
         )
+
+        map.once('idle', () => {
+            isMapLoaded.value = true
+        })
     })
 
     map.on('error', (event) => {

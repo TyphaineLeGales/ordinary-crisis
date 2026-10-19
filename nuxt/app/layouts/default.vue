@@ -1,6 +1,13 @@
 <template>
   <main class="relative isolate h-screen flex flex-col overflow-hidden">
     <div class="fixed inset-0 -z-1">
+      <img
+        v-show="!isMapLoaded"
+        src="/img/loading-map.webp"
+        alt=""
+        class="size-full object-cover absolute"
+      />
+      <h2 v-show="!isMapLoaded" class="text-white-full w-full text-center text-3xl font-semibold top-52 absolute animate-pulse">Loading ...</h2>
       <ClientOnly>
         <Map />
       </ClientOnly>
@@ -32,4 +39,5 @@ const route = useRoute()
 const mapEvents = computed(() =>
   route.path === '/' || route.path === '/map'
 )
+const isMapLoaded = useState('map-loaded', () => false)
 </script>
