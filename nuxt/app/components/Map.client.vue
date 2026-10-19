@@ -203,4 +203,25 @@ onBeforeUnmount(() => {
 .maplibregl-ctrl-top-right {
     display: none;
 }
+
+button.maplibregl-ctrl-compass {
+    display:none;
+}
+
+.maplibregl-ctrl-group {
+    border: 1px solid #9334EA;
+    background-color:black;
+    color:white;
+    border-radius: 0;
+    
+}
+.maplibregl-ctrl-icon {
+     filter: brightness(0) invert(1);
+}
+
+.maplibregl-ctrl-group button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #9334EA
+}
 </style>
