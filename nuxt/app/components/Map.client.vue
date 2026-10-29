@@ -117,7 +117,7 @@ onMounted(async () => {
         type: 'line',
         source: 'texas-outline',
         paint: {
-            'line-color': '#9334EA',
+            'line-color': '#8E51FF',
             'line-width': 2,
         },
         })
@@ -126,7 +126,7 @@ onMounted(async () => {
         type: 'fill',
         source: 'texas-outline',
         paint: {
-            'fill-color': '#C085FC',
+            'fill-color': '#8E51FF',
             'fill-opacity': 0.3,
         },
         })
@@ -140,7 +140,7 @@ onMounted(async () => {
         ...placesLayer,
         source: 'texas-places',
         paint: {
-            "circle-radius": 6,
+            "circle-radius": 4,
             "circle-color": "#ffffff",
             "circle-stroke-color": '#C085FC',
         }} as maplibregl.CircleLayerSpecification)
@@ -211,7 +211,7 @@ button.maplibregl-ctrl-compass {
 }
 
 .maplibregl-ctrl-group {
-    border: 1px solid #9334EA;
+    border: 1px solid oklch(60.6% 0.25 292.717);
     background-color:black;
     color:white;
     border-radius: 0;
@@ -224,7 +224,7 @@ button.maplibregl-ctrl-compass {
 .maplibregl-ctrl-group button {
     width: 50px;
     height: 50px;
-    border: 1px solid #9334EA
+    border: 1px solid oklch(60.6% 0.25 292.717)
 }
 
 .control-hidden {

@@ -14,7 +14,7 @@
     </div>
     <header class="relative z-15 shrink-0">
       <NuxtLink to="/">
-        <h1 class="font-semibold text-3xl uppercase text-purple-600 border-b-2 border-purple-600 w-full p-3 bg-black-full bg-opacity-75">
+        <h1 class="font-semibold text-3xl uppercase text-violet-500 border-b-2 border-violet-500 w-full p-3 bg-black-full bg-opacity-75">
           Ordinary Crisis
         </h1>
       </NuxtLink>

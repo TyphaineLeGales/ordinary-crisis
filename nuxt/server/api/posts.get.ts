@@ -7,6 +7,7 @@ export default defineEventHandler(async () => {
     !(_id in path("drafts.**"))
     ] | order(publishedAt desc) {
     _id,
+    author,
     title,
     image,
     slug,
