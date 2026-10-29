@@ -107,6 +107,19 @@ onMounted(async () => {
     map.on('load', () => {
         if (!map) return
 
+        map.addSource('water', {
+        type: 'geojson',
+        data: '/water.geojson',
+        })
+        map.addLayer({
+        id: 'water-fill',
+        type: 'fill',
+        source: 'water',
+        paint: {
+            'fill-color': '#000000',
+        },
+        })
+
         map.addSource('texas-outline', {
         type: 'geojson',
         data: '/tx.geojson',

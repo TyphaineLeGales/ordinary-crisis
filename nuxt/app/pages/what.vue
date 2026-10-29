@@ -1,5 +1,5 @@
 <template>
-    <div class="full-size bg-white-full p-6">
+    <div class="full-size bg-white-full p-6 m-6 min-h-[calc(100vh-112px)]">
         <h2 class="font-extrabold uppercase pointer-events-auto ">WHAT ? </h2>
         <p>Ce projet est né de la rencontre entre Camille El Bacha, musicien, et Jean Daniélou, sociologue. Nous cherchions tous deux à dépasser les limites de nos disciplines respectives afin de mieux saisir la nature sensible de la crise climatique.</p>
         <p class="py-6">En tant que musicien, Camille recherchait un matériau sonique lui permettant d’élaborer une expression de notre condition contemporaine. Son idée était de briser l’abstraction symbolique apparente de la musique et de développer une approche terre-à-terre, en utilisant les sons de situations quotidiennes pour créer un écho documentaire des activités humaines à l’origine du réchauffement climatique. En tant qu’ethnographe, Jean cherchait un moyen d’aller au-delà de la démonstration scientifique et des déclarations écrites pour exprimer les dommages causés par les infrastructures fossiles à l’environnement et aux populations.</p>
