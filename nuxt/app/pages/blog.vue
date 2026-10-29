@@ -1,5 +1,5 @@
 <template>
-  <section class="flex justify-center z-10 relative pointer-events-auto ">
+  <section class="flex justify-center pointer-events-auto ">
     <p v-if="error">Couldn't load posts.</p>
     <p v-else-if="!posts?.length">No posts published yet.</p>
     <ul v-else class="max-w-3xl overflow-y-scroll">

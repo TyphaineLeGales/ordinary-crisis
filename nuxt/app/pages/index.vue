@@ -1,14 +1,14 @@
 <template>
-  <div class="size-full justify-center items-center flex backdrop-blur-md">
-    <div class="bg-violet-500 h-[550px] w-[550px] relative">
+  <div class="size-full justify-center items-center flex backdrop-blur-2xl">
+    <div class="h-[550px] w-[550px] relative">
       <img
-      src="/img/loading-map.webp"
+      src="/img/landing.webp"
       alt=""
-      class="size-full object-cover absolute"
+      class="size-full object-cover absolute brightness-50"
       />
-      <h1 class="text-5xl uppercase font-bold absolute text-violet-500"> Ordinary crisis</h1>
-      <p class="absolute bottom-2 text-violet-500 uppercase">
-        A project <NuxtLink to="/about">what</NuxtLink>
+      <h1 class="text-5xl uppercase font-bold absolute text-violet-500 p-3"> Ordinary crisis</h1>
+      <p class="absolute bottom-2 text-violet-500 uppercase p-3">
+        A project <NuxtLink to="/about">about</NuxtLink>
         <br>
         petroleum and music |
         <br>
@@ -25,11 +25,7 @@
     </div>
   </div>
 </template>
-<script setup>
-// definePageMeta({
-//   layout: 'landing',
-// })
-</script>
+
 <style scoped>
 a {
   @apply text-purple-200 underline
