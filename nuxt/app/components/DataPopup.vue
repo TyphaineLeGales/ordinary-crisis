@@ -1,6 +1,6 @@
 <template>
     <Transition name="popup">
-        <div class="flex items-center bg-black-full bg-opacity-50 w-[350px] min-h-[300px] pointer-events-auto m-6 backdrop-blur-sm p-3 flex-col" v-show="locationActive">
+        <div class="flex items-center bg-black-full bg-opacity-50 w-[350px] min-h-[300px] pointer-events-auto m-6 backdrop-blur-sm p-3 flex-col rounded-md" v-show="locationActive">
             <h3 class="text-white-full font-medium uppercase text-lg pb-3">{{ locationActive?.name }}</h3>
             <p class="text-white-full"> {{ locationActive?.description }}</p>
         </div>

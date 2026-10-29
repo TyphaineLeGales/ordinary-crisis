@@ -1,7 +1,24 @@
 <template>
-    <div class="full-size bg-white-full p-6 m-6 min-h-[calc(100vh-112px)]">
-        <p>Ce projet est né de la rencontre entre Camille El Bacha, musicien, et Jean Daniélou, sociologue. Nous cherchions tous deux à dépasser les limites de nos disciplines respectives afin de mieux saisir la nature sensible de la crise climatique.</p>
-        <p class="py-6">En tant que musicien, Camille recherchait un matériau sonique lui permettant d’élaborer une expression de notre condition contemporaine. Son idée était de briser l’abstraction symbolique apparente de la musique et de développer une approche terre-à-terre, en utilisant les sons de situations quotidiennes pour créer un écho documentaire des activités humaines à l’origine du réchauffement climatique. En tant qu’ethnographe, Jean cherchait un moyen d’aller au-delà de la démonstration scientifique et des déclarations écrites pour exprimer les dommages causés par les infrastructures fossiles à l’environnement et aux populations.</p>
-        <p>Au cours de nos discussions, le son est apparu, d’une part, comme un matériau approprié capable de saisir des fragments de réalité et, d’autre part, comme un instrument permettant d’explorer et d’aborder différemment notre compréhension des systèmes techniques tels que les infrastructures fossiles. En suivant cette intuition, nous avons formulé les questions suivantes : quel type de son un gisement de pétrole produit-il ? Et, inversement, que nous apprend ce son sur l’infrastructure ? L’étude de la dimension acoustique des infrastructures semblait constituer un angle mort dans les représentations courantes de ces grands systèmes techniques. Si des images emblématiques des plateformes pétrolières existent, il nous manque une appréhension auditive de celles-ci. Une fois ce constat établi, nous avons décidé d’entamer une collaboration fondée sur une recherche conjointe mêlant étude ethnographique de terrain et analyse sonore. Concrètement, l’idée consiste à « écouter » les infrastructures en enregistrant, à l’aide de microphones, l’environnement dans lequel elles sont installées. La collecte de sons sur le terrain à l’aide d’un appareil d’enregistrement, tout en circulant autour de ces installations, répond avant tout à une intention fondamentale qui vise à produire un récit documentaire de leur existence acoustique.</p>
+    <div class="flex justify-center items-center w-full md:flex-row flex-col">
+        <div class="md:w-2/3 w-full max-w-7xl flex min-h-[calc(100vh-112px)] bg-white-full m-6 md:flex-row flex-col p-6">
+            <div class="md:w-2/3 w-full">
+                <PortableText :value="about[0].body" />
+            </div>
+            <div class="md:w-1/3 w-full">
+                <h2 class="uppercase text-lg">CORE Team</h2>
+                <p class="text-violet-500">Jean Daniélou</p>
+                <p class="text-violet-500">Camille El Bacha</p>
+                <h2 class="uppercase text-lg mt-6">PARTNERS</h2>
+                <ul>
+                    <li v-for="partner in about[0].partners">
+                        <p class="text-violet-500">{{partner}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </template>
+<script setup>
+import { PortableText } from '@portabletext/vue';
+const { data: about, error, status } = await useFetch('/api/about')
+</script>

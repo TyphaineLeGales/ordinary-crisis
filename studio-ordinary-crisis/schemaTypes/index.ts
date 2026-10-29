@@ -1,3 +1,4 @@
 import {postType} from './postType'
 import {locationType} from './locationType'
-export const schemaTypes = [postType, locationType]
+import {aboutType} from './aboutType'
+export const schemaTypes = [postType, locationType, aboutType]
