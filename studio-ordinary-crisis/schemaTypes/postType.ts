@@ -14,6 +14,11 @@ export const postType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'tags',
+      type: 'array',
+      of: [defineArrayMember({type: 'string'})],
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       options: {source: 'title'},
