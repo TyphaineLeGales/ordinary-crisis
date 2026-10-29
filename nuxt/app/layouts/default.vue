@@ -12,16 +12,16 @@
         <Map />
       </ClientOnly>
     </div>
-    <header class="relative z-15 shrink-0">
+    <header class="relative z-15 shrink-0" v-show="!isLanding">
       <NuxtLink to="/">
-        <h1 class="font-semibold text-3xl uppercase text-violet-500 border-b-2  w-full p-3">
+        <h1 class="font-semibold text-3xl uppercase text-violet-500 border-b-2 border-violet-500 md:border-0  w-full p-3 backdrop-blur-sm">
           Ordinary Crisis
         </h1>
       </NuxtLink>
     </header>
 
     <div class="flex-1 min-h-0 flex flex-col md:flex-row">
-      <nav class="relative shrink-0 md:w-20 md:order-last md:flex md:justify-end bg-black-full bg-opacity-75" >
+      <nav class="relative shrink-0 md:w-20 md:order-last md:flex md:justify-end backdrop-blur-sm bg-opacity-75" v-show="!isLanding">
         <Nav />
       </nav>
       <section class="relative flex-1 min-w-0 min-h-0" :class="mapEvents
@@ -38,5 +38,6 @@ const route = useRoute()
 
 const mapEvents = computed(() =>route.path === '/map'
 )
+const isLanding = computed(() => route.path === '/')
 const isMapLoaded = useState('map-loaded', () => false)
 </script>

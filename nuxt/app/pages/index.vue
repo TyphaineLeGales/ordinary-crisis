@@ -1,5 +1,5 @@
 <template>
-  <div class="size-full justify-center items-center flex">
+  <div class="size-full justify-center items-center flex backdrop-blur-md">
     <div class="bg-violet-500 h-[550px] w-[550px] relative">
       <img
       src="/img/loading-map.webp"
@@ -26,9 +26,10 @@
   </div>
 </template>
 <script setup>
-definePageMeta({
-  layout: 'landing',
-})</script>
+// definePageMeta({
+//   layout: 'landing',
+// })
+</script>
 <style scoped>
 a {
   @apply text-purple-200 underline
