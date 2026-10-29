@@ -24,9 +24,7 @@ const layerIds = [
 
 const updateMapInfoVisibility = () => {
   if (!map) return
-
   const visible = route.path === '/map'
-
   for (const layerId of layerIds) {
     if (map.getLayer(layerId)) {
       map.setLayoutProperty(
@@ -35,6 +33,14 @@ const updateMapInfoVisibility = () => {
         visible ? 'visible' : 'none'
       )
     }
+  }
+  const bottomLeftControl = map
+    .getContainer()
+    .querySelector('.maplibregl-ctrl-bottom-left')
+
+  if (bottomLeftControl) {
+    (bottomLeftControl as HTMLElement).style.display =
+      visible ? 'block' : 'none'
   }
 }
 
@@ -52,7 +58,6 @@ const emitResetLoc = (event, map) => {
     $event('location:clear')
 
 }
-
 
 onMounted(async () => {
     await nextTick()
@@ -76,7 +81,6 @@ onMounted(async () => {
                 'Satellite imagery © EOX IT Services GmbH',
             },
         },
-
         layers: [
             {
             id: 'satellite',
@@ -89,10 +93,9 @@ onMounted(async () => {
             },
         ],
         },
-
         center: isMobile ? [-99.5, 29.5] : [-99.5, 32.5],
         zoom: isMobile ? 3.5 : 4.6,
-        minZoom: 2.5,
+        minZoom: 4,
         maxZoom: 9,
         maxBounds: isMobile
             ? [[-115, 15],[-80, 43],]
@@ -147,8 +150,6 @@ onMounted(async () => {
         source: 'texas-places',
         } as maplibregl.SymbolLayerSpecification)
 
-  
-
         updateMapInfoVisibility()
         map.on('click', (event) => {
             emitResetLoc(event, map)
@@ -190,7 +191,6 @@ onMounted(async () => {
     map.on('error', (event) => {
         console.error('MapLibre error:', event.error)
     })
-
 })
 
 onBeforeUnmount(() => {
@@ -225,5 +225,9 @@ button.maplibregl-ctrl-compass {
     width: 50px;
     height: 50px;
     border: 1px solid #9334EA
+}
+
+.control-hidden {
+
 }
 </style>
