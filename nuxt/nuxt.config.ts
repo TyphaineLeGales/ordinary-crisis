@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
+console.log(
+  'SANITY PROJECT ID:',
+  process.env.NUXT_SANITY_PROJECT_ID
+)
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },

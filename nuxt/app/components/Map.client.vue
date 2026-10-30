@@ -153,9 +153,10 @@ onMounted(async () => {
         ...placesLayer,
         source: 'texas-places',
         paint: {
-            "circle-radius": 4,
-            "circle-color": "#ffffff",
-            "circle-stroke-color": '#C085FC',
+            "circle-radius": 10,
+            'circle-opacity': 0, 
+            'circle-stroke-width': 1,
+            "circle-stroke-color": '#ffffff',
         }} as maplibregl.CircleLayerSpecification)
 
         map.addLayer({
