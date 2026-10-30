@@ -4,7 +4,8 @@
       <NuxtImg src="/img/landing.webp" class="size-full object-cover absolute brightness-50" alt="satellite black and white map of texas"/>
       <h1 class="text-5xl uppercase font-bold absolute text-violet-500 p-3"> Ordinary crisis</h1>
       <p class="absolute bottom-2 text-violet-500 uppercase p-3">
-        A project <NuxtLink to="/about">about</NuxtLink>
+        <!-- A project <NuxtLink to="/about" disabled>about</NuxtLink> -->
+        A project about
         <br>
         petroleum and music |
         <br>
@@ -24,6 +25,6 @@
 
 <style scoped>
 a {
-  @apply text-purple-200 underline
+  @apply text-violet-300 underline
 }
 </style>

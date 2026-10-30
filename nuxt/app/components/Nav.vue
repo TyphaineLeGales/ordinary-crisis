@@ -18,6 +18,6 @@
 <script setup> 
 const router = useRouter()
 const allPages = router.getRoutes()
-const navLinks = computed(() => allPages.filter(r => r.name !=="index"))
+const navLinks = computed(() => allPages.filter(r => r.name !=="index" && r.name !=="about"))
 
 </script>
