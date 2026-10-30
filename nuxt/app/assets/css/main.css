@@ -15,3 +15,17 @@ a {
     font-style: underline;
     color: oklch(60.6% 0.25 292.717);
 }
+
+font-face {
+  font-family: 'Moraic';
+  src: url('/fonts/Moraic-Regular.woff2') format('woff2'),
+  url('/fonts/Moraic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1, h2, h3 {
+    font-family: 'Moraic';
+
+}
