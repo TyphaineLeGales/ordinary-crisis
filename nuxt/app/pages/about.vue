@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full min-h-full flex justify-center items-start">
+  <div class="w-full min-h-full flex justify-center items-start p-6">
     <div
       class="w-full max-w-7xl md:w-2/3 bg-white-full md:m-6
              p-6 flex flex-col md:flex-row"
@@ -8,7 +8,7 @@
         <PortableText :value="about[0].body" />
       </div>
 
-      <div class="md:w-1/3 w-full md:ml-12 flex flex-col mt-6 md:mt-0">
+      <div class="md:w-1/3 w-full md:ml-12r flex flex-col mt-6 md:mt-0">
         <h2 class="uppercase text-lg">CORE Team</h2>
         <p>Jean Daniélou</p>
         <p>Camille El Bacha</p>
@@ -23,7 +23,7 @@
         <h2 class="uppercase text-lg mt-6">SITE WEB</h2>
         <p>Typhaine Le Galès</p>
         <div class="mt-auto pt-12 flex items-end justify-end w-full">
-          <NuxtImg class="mt-auto pt-12 w-32" src="/img/logo-albertine.png"/>
+          <NuxtImg class="mt-auto pt-12 w-32" src="/img/logo-albertine.png" alt="logo de la villa Albertine"/>
         </div>
       </div>
     </div>

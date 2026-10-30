@@ -6,7 +6,7 @@
         </h1>
       </NuxtLink>
       <ul class="flex px-3 uppercase font-medium pb-3 md:pb-0">
-          <div class="flex text-xl justify-between w-full items-center">
+          <div class="flex text-xl justify-between w-full items-center mt-3 md:mt-0">
               <li v-for="route in navLinks" :key="route.path" class="text-right flex justify-start md:pr-3">
                   <NuxtLink :to="route.path" exact-active-class="text-white-full">{{ route.name || route.path }}</NuxtLink>
               </li>

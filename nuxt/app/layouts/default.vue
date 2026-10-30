@@ -18,7 +18,7 @@
     </div>
     <Nav v-show="!isLanding" />
     <section
-      class="absolute inset-x-0 md:top-[60px] top-[102px] bottom-0 z-10 overflow-y-auto"
+      class="absolute inset-x-0 md:top-[60px] top-[112px] bottom-0 z-10 overflow-y-auto"
       :class="mapEvents
         ? 'overflow-hidden pointer-events-none'
         : 'overflow-y-auto pointer-events-auto'"
