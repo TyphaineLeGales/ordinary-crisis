@@ -2,8 +2,8 @@
   <div class="size-full justify-center items-center flex backdrop-blur-2xl fixed top-0">
     <div class="h-[550px] w-[550px] relative">
       <NuxtImg src="/img/landing.webp" class="size-full object-cover absolute brightness-50" alt="satellite black and white map of texas"/>
-      <h1 class="text-5xl uppercase font-bold absolute text-violet-500 p-3"> Ordinary crisis</h1>
-      <p class="absolute bottom-2 text-violet-500 uppercase p-3">
+      <h1 class="text-5xl uppercase font-bold absolute text-toxic-violet-full p-3"> Ordinary crisis</h1>
+      <p class="absolute bottom-2 text-toxic-violet-full uppercase p-3">
         <!-- A project <NuxtLink to="/about" disabled>about</NuxtLink> -->
         A project about
         <br>
@@ -25,6 +25,6 @@
 
 <style scoped>
 a {
-  @apply text-violet-300 underline
+  @apply text-toxic-violet-light underline
 }
 </style>

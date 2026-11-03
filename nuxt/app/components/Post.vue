@@ -1,6 +1,6 @@
 <template>
     <div class="py-6">
-        <h2 class="text-5xl  uppercase text-violet-500 ">{{ post.title }}</h2>
+        <h2 class="text-5xl  uppercase text-toxic-violet-full ">{{ post.title }}</h2>
         <div class="mt-3">
             <h3 class="font-semibold">{{ post.author }}</h3>
             <ul class="flex"><li v-for="tag in post.tags" class="pr-3"><p>{{ tag }}</p></li></ul>

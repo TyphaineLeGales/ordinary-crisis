@@ -35,6 +35,6 @@ const { data: about, error, status } = await useFetch('/api/about')
 </script>
 <style scoped>
 p {
-    @apply text-violet-500
+    @apply text-toxic-violet-full
 }
 </style>

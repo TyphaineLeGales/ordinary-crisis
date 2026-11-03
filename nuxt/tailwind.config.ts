@@ -13,6 +13,10 @@ export default {
             "2xl": "1920px",
         },
         colors: {
+            "toxic-violet":{
+                full:"#A162F1",
+                light: "#d2b8f4"
+            },
             black: {
                 full: "#121223",
             },
