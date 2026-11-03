@@ -10,7 +10,7 @@
 const locationActive = ref(null)
 import { PortableText } from '@portabletext/vue';
 const { data: locations, error, status } = await useFetch('/api/locations')
-console.log(locations)
+
 watchEffect(() => {
   console.log('Status:', status.value)
   console.log('Locations:', locations.value)

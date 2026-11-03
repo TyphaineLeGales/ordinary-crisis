@@ -16,7 +16,7 @@ a {
     color: #A162F1;
 }
 
-font-face {
+@font-face {
   font-family: 'Moraic';
   src: url('/fonts/Moraic-Regular.woff2') format('woff2'),
   url('/fonts/Moraic-Regular.woff') format('woff');
